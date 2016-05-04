@@ -6,7 +6,7 @@ ls ..
 
 ls -al ../*
 
-set -e
+set -ex
 
 git config user.email 'concourse-ci@cloud.gov'
 
