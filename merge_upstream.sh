@@ -8,7 +8,7 @@ git remote add upstream $1
 
 git fetch upstream
 
-git merge upstream/master
+git merge upstream/master -m "Auto-merge by CI"
 
 git remote -v
 
