@@ -8,6 +8,8 @@ ls -al ../*
 
 set -e
 
+git config user.email 'concourse-ci@cloud.gov'
+
 git remote add upstream $1
 
 git fetch upstream
