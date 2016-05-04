@@ -2,6 +2,10 @@
 
 See [docs](https://github.com/cloudfoundry/bosh-micro-cli/blob/master/docs/uaa.md) in bosh-micro-cli.
 
+## Export Warning
+
+This fork of the UAA release includes > 128-bit encryption. The software may be subject to import or export regulations outside the United States.
+
 ## Configuring UAA to run on https with SSL
 
 By default UAA is configured to use SSL with a self-signed certificate and will be started on port 8443.
