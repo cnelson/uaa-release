@@ -1,11 +1,5 @@
 #!/bin/sh
 
-ls
-
-ls ..
-
-ls -al ../*
-
 set -ex
 
 git config user.email 'concourse-ci@cloud.gov'
