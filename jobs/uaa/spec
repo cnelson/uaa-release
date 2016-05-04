@@ -547,11 +547,7 @@ properties:
     default: ""
   uaa.ldap.groups.groupRoleAttribute:
     description: "Used with groups-as-scopes, defines the attribute that holds the scope name(s)."
-<<<<<<< HEAD
-    default: foo-this-should-break
-=======
     default: spring.security.ldap.dn
->>>>>>> upstream/master
   uaa.ldap.groups.groupSearchFilter:
     description: "Search query filter to find the groups a user belongs to, or for a nested search, groups that a group belongs to"
     default: "member={0}"
