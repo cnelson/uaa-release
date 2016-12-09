@@ -2,7 +2,7 @@
 jobs:
 - name: merge-upstream
   public: true
-  plan: 
+  plan:
     - get: uaa-release-fork
     - get: uaa-release-upstream
       trigger: true

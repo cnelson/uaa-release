@@ -6,6 +6,34 @@ See [docs](https://github.com/cloudfoundry/bosh-micro-cli/blob/master/docs/uaa.m
 
 This fork of the UAA release includes > 128-bit encryption. The software may be subject to import or export regulations outside the United States.
 
+## Configuring required properties for UAA start-up
+
+The properties below need to be generated explicitly per deployment of UAA release and are required for proper start-up and functioning of UAA. These are standard artifacts which can be generated using openssl. Please refer the topic below on how to generate a self signed cert.
+
+#### SAML Service Provider Configuration
+
+```
+login.saml.serviceProviderCertificate:
+description: "UAA SAML Service provider certificate. This is used for signing outgoing SAML Authentication Requests"
+
+login.saml.serviceProviderKey:
+description: "Private key for the service provider certificate."
+```
+
+#### JWT Signing Keys(verification key needn't be set as we derive it from the private key)
+
+```
+uaa.jwt.policy.keys:
+ description: "Map of key IDs and signing keys, each defined with a property `signingKey`"
+    example:
+      key-1:
+        signingKey
+ 
+ uaa.jwt.policy.active_key_id:
+ description: "The ID of the JWT signing key to be used when signing tokens."
+ example: "key-1" 
+```
+
 ## Configuring UAA to run on https with SSL
 
 By default UAA is configured to use SSL with a self-signed certificate and will be started on port 8443.
@@ -58,3 +86,10 @@ Add the following properties to your manifest:
 5. Push to your fork (`git push origin my_branch`) and
    [submit a pull request](https://help.github.com/articles/creating-a-pull-request)
    selecting `develop` as the target branch
+
+
+## Acknowledgements
+
+* The UAA team uses RubyMine, The Most Intelligent Ruby and Rails IDE
+  
+  [![RubyMine](https://raw.githubusercontent.com/fhanik/acknowledgment/master/icons/icon_RubyMine.png)](https://www.jetbrains.com/ruby/)
